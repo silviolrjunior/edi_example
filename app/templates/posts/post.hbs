@@ -1,0 +1,12 @@
+<h1>Post {{model.id}}</h1>
+<div class="mt_30">
+  <p>
+    <strong>Title: </strong>
+    {{model.title}}
+  </p>
+  <p>
+    <strong>Message: </strong>
+    {{model.message}}
+  </p>
+</div>
+{{link-to 'Back' 'posts' class="btn btn-default"}}

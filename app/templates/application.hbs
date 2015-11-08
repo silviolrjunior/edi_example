@@ -1,3 +1,36 @@
-<h2 id="title">Welcome to Ember.js</h2>
-
-{{outlet}}
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Edi Example</a>
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li>{{link-to 'Home' 'index'}}</li>
+        <li>{{link-to 'Posts' 'posts'}}</li>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="all">
+  <div class="container">
+    <div class="wrapper">
+      {{outlet}}
+    </div>
+  </div>
+  <div class='footer'>
+    <div class="col-sm-4">
+      <span class='text-muted'>Copyright © 2015 Edi Example</span>
+    </div>
+    <div class='col-sm-5'></div>
+    <div class='col-sm-3 text-right'>
+      <a href="#" class='text-muted'>Project</a>
+      <a href="#" class='text-muted'>Help</a>
+    </div>
+  </div>
+</div>

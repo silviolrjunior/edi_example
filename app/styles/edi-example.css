@@ -1,0 +1,8 @@
+html, body{height: 100%; width:100%;}
+.all{position: relative;}
+.wrapper{margin-top: 70px;}
+.footer{position: fixed; bottom:0; width: 100%; min-height: 34px;}
+.mt_20{margin-top: 20px;}
+.mt_30{margin-top: 30px;}
+.mt_40{margin-top: 40px;}
+.cursor_p{cursor: pointer;}

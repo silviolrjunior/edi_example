@@ -1,0 +1,17 @@
+<h1>Create a new Post</h1>
+<form class="form-horizontal mt_30">
+  <div class="col-sm-4">
+    {{input value=model.title class="form-control" placeholder="Title"}}
+  </div>
+  <div class="clearfix"></div>
+  <br>
+  <div class="col-sm-4">
+    {{textarea value=model.message class="form-control" placeholder="Message"}}
+  </div>
+  <div class="clearfix"></div>
+  <br>
+  <div class='col-md-12'>
+    <button {{action 'save'}} id="save" class="btn btn-success">Create Post</button>
+    {{link-to 'Back' 'posts' class="btn btn-default"}}
+  </div>
+</form>
