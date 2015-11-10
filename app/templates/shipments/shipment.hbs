@@ -1,0 +1,12 @@
+<h1>Shipment {{model.id}}</h1>
+<div class="mt_30">
+  <p>
+    <strong>Delivery Date: </strong>
+    {{model.delivery_date}}
+  </p>
+  <p>
+    <strong>Storage Id: </strong>
+    {{model.storage_id}}
+  </p>
+</div>
+{{link-to 'Back' 'shipments' class="btn btn-default"}}

@@ -1,0 +1,36 @@
+<h1>
+  Listing Shipments
+</h1>
+<div class="table-responsive">
+  <table class="table table-hover table-striped mt_30">
+    <thead>
+      <tr>
+        <th width="10%">ID</th>
+        <th width="30%">Delivery Date</th>
+        <th width="20%">Created At</th>
+        <th width="10%">Storage ID</th>
+        <th width="20%">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |shipment|}}
+        <tr>
+          <td>{{shipment.id}}</td>
+          <td>{{shipment.delivery_date}}</td>
+          <td>{{shipment.created_at}}</td>
+          <td>{{shipment.storage_id}}</td>
+          <td>
+            {{link-to 'Show' 'shipments.shipment' shipment class="btn btn-xs btn-warning"}}
+            <a {{action "delete" shipment}} class="btn btn-danger btn-xs">Delete</a>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="4">
+            No shipments yet!
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

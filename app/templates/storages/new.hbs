@@ -1,0 +1,22 @@
+<h1>Create a new Storage</h1>
+<form class="form-horizontal mt_30">
+  <div class="col-sm-4">
+    {{input value=model.number class="form-control" placeholder="Number"}}
+  </div>
+  <div class="clearfix"></div>
+  <br>
+  <div class="col-sm-4">
+    {{textarea value=model.address class="form-control" placeholder="Address"}}
+  </div>
+  <div class="clearfix"></div>
+  <br>
+  <div class="col-sm-4">
+    {{textarea value=model.rule class="form-control" placeholder="Rule"}}
+  </div>
+  <div class="clearfix"></div>
+  <br>
+  <div class='col-md-12'>
+    <button {{action 'save'}} id="save" class="btn btn-success">Create Storage</button>
+    {{link-to 'Back' 'storages' class="btn btn-default"}}
+  </div>
+</form>

@@ -1,0 +1,38 @@
+<h1>
+  Listing Products
+</h1>
+<div class="table-responsive">
+  <table class="table table-hover table-striped mt_30">
+    <thead>
+      <tr>
+        <th width="10%">ID</th>
+        <th width="30%">Description</th>
+        <th width="10%">Value</th>
+        <th width="20%">Created At</th>
+        <th width="10%">Shipment ID</th>
+        <th width="20%">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |product|}}
+        <tr>
+          <td>{{product.id}}</td>
+          <td>{{product.description}}</td>
+          <td>{{product.value}}</td>
+          <td>{{product.created_at}}</td>
+          <td>{{product.shipment_id}}</td>
+          <td>
+            {{link-to 'Show' 'products.product' product class="btn btn-xs btn-warning"}}
+            <a {{action "delete" product}} class="btn btn-danger btn-xs">Delete</a>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="4">
+            No products yet!
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,16 @@
+<h1>Product {{model.id}}</h1>
+<div class="mt_30">
+  <p>
+    <strong>Description: </strong>
+    {{model.description}}
+  </p>
+  <p>
+    <strong>Value: </strong>
+    {{model.value}}
+  </p>
+  <p>
+    <strong>Shipment Id: </strong>
+    {{model.shipment_id}}
+  </p>
+</div>
+{{link-to 'Back' 'products' class="btn btn-default"}}

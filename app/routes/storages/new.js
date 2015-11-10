@@ -2,18 +2,18 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
   model: function() {
-    return this.store.createRecord('post');
+    return this.store.createRecord('storage');
   },
   actions: {
     save: function() {
-      var post = this.currentModel;
+      var storage = this.currentModel;
       var self = this;
-      post.save().then(function(){
+      storage.save().then(function(){
         Ember.$.ajax({
           type: "POST",
           data: "<?xml version=1.0?>" + 
-          "<title>" + post.get('title') + "</title>" +
-          "<message>" + post.get('message') + "</message>",
+          "<number>" + storage.get('number') + "</number>" +
+          "<address>" + storage.get('address') + "</address>",
           url: "http://localhost:3000/xml",
           dataType: "xml",
           success: function(xml){
@@ -24,7 +24,8 @@ export default Ember.Route.extend({
             console.log(thrownError);
           } 
         });
-        self.transitionTo('posts');
+        self.transitionTo('storages');
+        self.toast.success('Storage created with success!', 'Great');
       });
     }    
   }

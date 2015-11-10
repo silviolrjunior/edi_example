@@ -1,0 +1,39 @@
+<h1>
+  Listing Storages
+  {{link-to 'New Storage' 'storages.new' class="pull-right btn btn-primary"}}
+</h1>
+<div class="table-responsive">
+  <table class="table table-hover table-striped mt_30">
+    <thead>
+      <tr>
+        <th width="10%">ID</th>
+        <th width="10%">Number</th>
+        <th width="30%">Address</th>
+        <th width="20%">Created At</th>
+        <th width="10%">Rule</th>
+        <th width="20%">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each model as |storage|}}
+        <tr>
+          <td>{{storage.id}}</td>
+          <td>{{storage.number}}</td>
+          <td>{{storage.address}}</td>
+          <td>{{storage.created_at}}</td>
+          <td>{{storage.rule}}</td>
+          <td>
+            {{link-to 'Show' 'storages.storage' storage class="btn btn-xs btn-warning"}}
+            <a {{action "delete" storage}} class="btn btn-danger btn-xs">Delete</a>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan="4">
+            No storages yet!
+          </td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
